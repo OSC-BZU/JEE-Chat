@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.tareq_chat_PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>com.tareq.chat.entity.ChatMessage</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <shared-cache-mode>ALL</shared-cache-mode>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/chat?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useUnicode=true&amp;character_set_server=utf8mb4"/>
+      <property name="javax.persistence.jdbc.user" value="chat_api"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="chat_pass"/>
+      <property name="hibernate.connection.autocommit" value="false"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
+      <property name="hibernate.connection.CharSet" value="utf8mb4"/>
+      <property name="hibernate.connection.characterEncoding" value="utf8"/>
+      <property name="hibernate.connection.useUnicode" value="true"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
